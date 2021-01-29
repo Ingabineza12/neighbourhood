@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        {% if searched_hoods%}
+        <h2>Found {{ searched_hoods|length }} of searched term {{message}}</h2>
+        {% else %}
+        <h2> Found 0 searched_hoods for the search term {{message}}</h2>
+        {% endif %}
+
+    </div>
+
+    <div class="row">
+
+        {% if searched_hoods %}
+        <div class="container">
+            <div class="row">
+                {%for hood in searched_hoods%}
+
+                <div style="margin-top:20px;" class='col-md-12'>
+                    <div style="width:100%;" class="w3-container card">
+
+                        <div class="w3-card" style="width:100%;">
+                            <header class="w3-container edge">
+                                <h1>{{hood.name}}</h1>
+                            </header>
+
+                            <div class="w3-container content">
+
+                                <p>location: {{hood.location}}</p>
+                                <a href="{%url 'detail' hood.id %}" style="color:blue; text-decoration:none"><b>More details</b></a>
+                                <img src="{{ hood.image.url }}" alt="image" style="width:100%">
+                                <!-- <p>admin: {{hood.admin}}</p> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        {% endblock %}
