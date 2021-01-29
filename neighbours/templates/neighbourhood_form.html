@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%load bootstrap3%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mtaa</title>
+</head>
+
+<body>
+  {%block content%}
+  <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form neighbourform %}
+    <a href="{% url 'home' %}"><button type="submit">Upload</button></a>
+  </form>
+  {%endblock%}
+</body>
+
+</html>
