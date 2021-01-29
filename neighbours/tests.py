@@ -5,7 +5,7 @@ class ProfileTestClass(TestCase):
 
     def setUp(self):
 
-        self.new_profile=Profile(bio='i love basketball')
+        self.new_profile=Profile(bio='God is my strength')
     # test for instance
     def test_instance(self):
         self.assertTrue(isinstance(self.new_profile,Profile))
