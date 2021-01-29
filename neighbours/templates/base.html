@@ -1,0 +1,39 @@
+{% load bootstrap3 %}
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Mtaa - {{title}}</title>
+  {% else %}
+  <title> Mtaa </title>
+  {% endif %}
+
+
+  {% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:500i,600,600i,700,700i|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+  {% endblock %}
+
+</head>
+
+<body>
+  {% include "navbar.html" %}
+  {% block content %} <h1 class='text-center'>Neighbourhood</h1>
+  <p class='text-center'>Welcome to Neighbourhood, Join a neighbourhood, Meet new neighbours, post latest happenings.</p>
+  {%endblock%}
+
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %}
+  {% endblock %}
+</body>
+
+</html>
