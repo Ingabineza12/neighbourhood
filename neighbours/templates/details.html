@@ -1,0 +1,68 @@
+{%extends 'base.html'%}
+{%block content%}
+{% load bootstrap3 %} {% load staticfiles%}
+<div class="container">
+    <div class="row">
+        <div style="margin-top:20px;" class='col-md-5'>
+            <div style="width:100%;" class="w3-container card">
+
+                <div class="w3-card" style="width:100%;">
+                  <header class="w3-container w3-light-grey">
+                    <hr>
+                    <h4>{{ neighbourhood.name }}</h4>
+                    <p class='article-content'>location: {{ neighbourhood.location }}</p>
+                  </header>
+                  <br>
+                  <div class="w3-container">
+                    <img src="{{ neighbourhood.image.url }}" alt="image" style="width:100%">
+                  </div>
+                  <footer class="w3-container">
+                    <br>
+                    <br>
+                  </footer>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div style="background-color:#E5E7E9; margin-top:20px; margin-right:2px; margin-left:2px;" class="col-md-3">
+          <br>
+            <p>click <a class="img-thumbnail" href="{%url 'new_business' pk=neighbourhood.id %}" style="text-decoration:none;">here</a> to post about your business</p>
+            {%if businesses%}
+            {%for business in businesses%}
+
+            <p><b>name:</b> {{business.name}}</p>
+            <p><b>description:</b> {{business.description}}</p>
+            <p><b>contact:</b> {{business.email}}</p>
+            <hr>
+            {%endfor%}
+            {%else%}
+            <p><b>no business at the moment</b></p>
+            {%endif%}
+        </div>
+
+
+
+        <div style="background-color:#E5E7E9; margin-top:20px; margin-right:2px; margin-left:2px;" class="col-md-3">
+          <br>
+            <p><a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" style="text-decoration:none;">
+                    share
+                </a> something with your neighbour. </p>
+            {%if posts%}
+            {%for post in posts%}
+            <p><strong>{{post.user.username}}: </strong> {{post.post}}</p>
+            {%endfor%}
+            {%else%}
+            <p><b>no post by {{user.username}} at the moment</b></p>
+            {%endif%}
+            <br>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}
