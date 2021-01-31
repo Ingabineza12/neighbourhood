@@ -14,7 +14,9 @@
   <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% bootstrap_form neighbourform %}
-    <a href="{% url 'home' %}"><button type="submit">Upload</button></a>
+    <a href="{% url 'home' %}"><button type="submit" class=" btn-outline-success btn-lg" >Upload</button></a>
+
+
   </form>
   {%endblock%}
 </body>
