@@ -8,9 +8,12 @@ from .forms import *
 
 # Create your views here.
 
+
+# display neighbourhoods
 def home(request):
-    neighbourhoods = Neighbourhood.objects.all()
-    return render(request, 'home.html',{"neighbourhoods":neighbourhoods,})
+    neighbourhoods=Neighbourhood.objects.all()
+    current_user=request.user
+    return render(request,'home.html',{"neighbourhoods":neighbourhoods})
 
 
 @login_required(login_url='/accounts/login/')
@@ -45,16 +48,16 @@ def profile_edit(request):
 
 @login_required(login_url='/accounts/login/')
 def addneighbourhood(request):
-    neighbourform = NeighbourhoodForm()
-    neighbourform.owner = request.user
-    if request.method == "POST":
-        neighbourform = NeighbourhoodForm(request.POST,request.FILES)
+    current_user=request.user
+    if request.method=='POST':
+        neighbourform=NeighbourhoodForm(request.POST,request.FILES)
         if neighbourform.is_valid():
-           neighbourform.save()
-           return render (request,'home.html')
-        else:
-           neighbourform=NeighbourhoodForm(request.POST,request.FILES)
-
+            image=neighbourform.save(commit=False)
+            image.user=current_user
+            image.save()
+        return redirect('home')
+    else:
+        neighbourform=NeighbourhoodForm()
     return render(request,'neighbourhood_form.html',{"neighbourform":neighbourform})
 
 
