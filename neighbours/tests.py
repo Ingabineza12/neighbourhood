@@ -18,7 +18,7 @@ class ProfileTestClass(TestCase):
 class NeighbourhoodTestClass(TestCase):
 
         def setUp(self):
-            self.new_neighbourhood=Neighbourhood(name='killeleshwa',population=20101000)
+            self.new_neighbourhood=Neighbourhood(name='Remera',population=200000)
         def tearDown(self):
             Neighbourhood.objects.all().delete()
 
