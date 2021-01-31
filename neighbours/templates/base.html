@@ -33,6 +33,44 @@ body{
   {% include "navbar.html" %}
   {% block content %} <h1 class='text-center' style="color: wheat; font-size:40px; font-weight:bolder; background-color: rgb(0,0,0,0.5)">Neighbourhood</h1>
   <p class='text-center' style="color: wheat; font-weight:bolder;background-color: rgb(0,0,0,0.5);">Welcome to Neighbourhood, Join a neighbourhood, Meet new neighbours,<br> post latest happening in your neighbourhood to share with new neighbours and those not aware of the events happening.   <strong>Welcome</<strong> :)  </p>
+
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container">
+      <div class="row">
+        {% for neighbourhood in neighbourhoods %}
+        <div class="col-md-4" style="">
+
+          <div class="w3-card" style="width:100%; overflow:hidden;">
+            <header class="w3-container w3-light-grey">
+              <hr>
+              <h4>{{ neighbourhood.name }}</h4>
+              <p class='article-content'>location: {{ neighbourhood.location }}</p>
+            </header>
+            
+            <div class="w3-container w3-light-grey">
+              <img src="{{ neighbourhood.image.url }}" alt="image" style="width:100%;">
+            </div>
+            <footer class="w3-container w3-light-grey">
+              <br>
+              <a href="{%url 'detail' neighbourhood.id %}" style="text-decoration:none;"><button class="btn btn-outline-success center-block"">Join</button></a>
+              <br>
+            </footer>
+          </div>
+          <br><br><br><br>
+
+
+        </div>
+        {%endfor%}
+      </div>
+
+    </div>
+
+
+
   {%endblock%}
 
   {% block scripts %}
