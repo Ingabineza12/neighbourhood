@@ -5,7 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     url('^$',views.home,name = 'home'),
-    url(r'^profile/', views.profile, name='profile'),
+    url(r'^edit/profile$',  views.profile_edit,name='profile_edit'),
+    url('^myprofile/', views.myprofile,name='myprofile'),
+
     url('^neighbourhood', views.neighbourhood, name='neighbourhood'),
     url('^addneighbourhood',views.addneighbourhood,name="addneighbourhood"),
     url(r'^detail/(?P<neighbourhood_id>\d+)/$' , views.neighbourhood_details, name='detail' ),
