@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+{% block content %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+
+
+  <div class="container" style="background-color: beige;">
+  <div class="row">
+  <div class="col-md-7">
+  <div class="content-section">
+  <div class="media">
+  <img src="{{user.profile.image.url }}" alt="Profile" class="img_profile " style="margin-top:30px;"> <br><br><br><br>
+  <div class="media-body">
+  <div class="bodd">
+  <h3 class="account-heading ml-4" style="margin-top:30px; ">{{user.username}} </h3>
+  <button style="background-color: maroon; margin-top:50px"><a href="{% url 'profile_edit' %}" style="color:white;text-decoration:none;">Edit Profile</a></button>
+</div> <br><br>
+
+  <p class="text-secondary ml-4"><strong>Email: </strong>{{user.email}}</p> <br>
+  <p class="text-secondary ml-4"><strong>Bio: </strong>{{user.profile.bio}}</p>
+  </div>
+</div>
+</div>
+</div>
+</div> <br><br><br><br><br><br><br><br>
+  <hr>
+
+  <style>
+      .img_profile{
+        vertical-align: middle;
+        width: 200px;
+        height: 200px;
+        border-radius:50%;
+      }
+      .bodd,.bod{
+       display: flex;
+       justify-content: space-between;
+      }
+      #home{
+        text-decoration:none;
+        font-size: 20px;
+        margin-top: 20px;
+        color:black;
+        font-weight: bolder;
+      }
+    </style>
+
+  {% endblock %}
