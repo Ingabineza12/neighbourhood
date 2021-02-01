@@ -129,6 +129,7 @@ STATICFILES_DIRS = [
 ]
 TIME_ZONE = 'Africa/Nairobi'
 
+
 LOGIN_REDIRECT_URL = "home"
 LOGIN_URL = 'login'
 

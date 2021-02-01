@@ -22,32 +22,29 @@
 <nav class="navbar navbar-expand-lg" style="color:wheat; background-color:maroon;" >
 
   <!-- Navbar brand -->
-  <!-- <a class="navbar-brand" href="{% url 'home' %}" style="color:wheat;">Neighbourhood</a> -->
 
-  <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+
 
   <!-- Collapsible content -->
+  {% if user.is_authenticated %}
+
   <div class="collapse navbar-collapse" id="basicExampleNav">
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item active" style="margin-right:30px;">
         <a class="nav-link" href="{% url 'home' %}" style="color:wheat;">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" style="margin-right:120px;">
         <a class="nav-link" href="{% url 'addneighbourhood' %}" style="color:wheat;">New Hood</a>
       </li>
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" >
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Others</a>
+          aria-haspopup="true" aria-expanded="false" >More</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="/myprofile" style="color:maroon; background-color:wheat;">Profile</a>
           <a class="dropdown-item" href="/accounts/login/" style="color:maroon;background-color:wheat;">Log Out</a>
@@ -55,11 +52,23 @@
       </li>
 
     </ul>
+
+
+      {% else %}
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" >More</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/accounts/register/" style="color:maroon;background-color:wheat;">Sign In</a>
+        </div>
+      </li>
+      {%endif%}
+
     <!-- Links -->
 
     <form class="form-inline">
          <div class="input-group search">
-     <input type="text" class="form-control" placeholder="Search by neighborhood name" name="search" style="max-width:215px; height: 28px; background-color:rgb(250, 250, 250;line-height: 38px; text-align: center;">
+     <input type="text" class="form-control" placeholder="Search hoodz location" name="search" style="max-width:215px; height: 28px; background-color:rgb(250, 250, 250;line-height: 38px; text-align: center;">
    </div>
     </form>
   </div>
