@@ -31,7 +31,7 @@
 
         <div style="background-color:#E5E7E9; margin-top:20px; margin-right:2px; margin-left:2px;" class="col-md-3">
           <br>
-            <p>click <a class="img-thumbnail" href="{%url 'new_business' pk=neighbourhood.id %}" style="text-decoration:none;">here</a> to post about your business</p>
+            <p>click <a class="img-thumbnail" href="{%url 'new_business' pk=neighbourhood.id %}" style="text-decoration:none; color:black;"> <strong>here</strong></a> to post about your business</p>
             {%if businesses%}
             {%for business in businesses%}
 
@@ -41,7 +41,7 @@
             <hr>
             {%endfor%}
             {%else%}
-            <p><b>no business at the moment</b></p>
+            <p><b>No added business at the moment</b></p>
             {%endif%}
         </div>
 
@@ -49,15 +49,15 @@
 
         <div style="background-color:#E5E7E9; margin-top:20px; margin-right:2px; margin-left:2px;" class="col-md-3">
           <br>
-            <p><a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" style="text-decoration:none;">
-                    share
+            <p><a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" style="text-decoration:none; color:black;">
+                    <strong>share </strong>
                 </a> something with your neighbour. </p>
             {%if posts%}
             {%for post in posts%}
             <p><strong>{{post.user.username}}: </strong> {{post.post}}</p>
             {%endfor%}
             {%else%}
-            <p><b>no post by {{user.username}} at the moment</b></p>
+            <p><b>No events posted by {{user.username}} yet!</b></p>
             {%endif%}
             <br>
         </div>
