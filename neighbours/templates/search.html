@@ -4,9 +4,9 @@
 
     <div class="row">
         {% if searched_hoods%}
-        <h2>Found {{ searched_hoods|length }} of searched term {{message}}</h2>
+        <h2 style="color: wheat;background-color: rgb(0,0,0,0.5);">Found {{ searched_hoods|length }} of searched term {{message}}</h2>
         {% else %}
-        <h2> Found 0 searched_hoods for the search term {{message}}</h2>
+        <h2 style="color: wheat;background-color: rgb(0,0,0,0.5);"> Found 0 searched_hoods for the search term {{message}}</h2>
         {% endif %}
 
     </div>

@@ -21,7 +21,7 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg" style="color:wheat; background-color:maroon;" >
 
-  
+
 
 
 
@@ -70,12 +70,24 @@
 
     <!-- Links -->
 
-    <form class="form-inline navbar-right">
+    <!-- <form class="form-inline navbar-right">
          <div class="input-group search">
-     <input type="text" class="form-control" placeholder="Search hoodz location" name="search" style="max-width:215px; height: 28px; background-color:rgb(250, 250, 250;line-height: 38px; text-align: center;">
+     <input type="text" class="form-control" placeholder="Search hoodz location" name="location" style="max-width:215px; height: 28px; background-color:rgb(250, 250, 250;line-height: 38px; text-align: center;">
    </div>
     </form>
-  </div>
+  </div>-->
+  <!-- Adding a search form  -->
+<div class="col-sm-4 col-md-4 navbar-right">
+
+  <form class="navbar-form" role="search" action="{% url 'search_hoods' %}">
+
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search hoodz location" name="location" style="max-width:215px; height: 28px; background-color:rgb(250, 250, 250;line-height: 38px;">
+    </div>
+
+  </form>
+</div>
+<!-- search form end -->
   <!-- Collapsible content -->
 
 </nav>
