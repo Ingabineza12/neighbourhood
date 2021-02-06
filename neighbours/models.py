@@ -20,8 +20,8 @@ class Neighbourhood(models.Model):
         self.delete()
 
     @classmethod
-    def search_by_name(cls,search_term):
-        neighborhood=cls.objects.filter(name__icontains=search_term)
+    def search_by_location(cls,search_term):
+        neighborhood=cls.objects.filter(location__icontains=search_term)
         return neighborhood
 
 

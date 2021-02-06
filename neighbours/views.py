@@ -104,8 +104,8 @@ def new_post(request,pk):
 
 
 def search_hoods(request):
-    if 'search' in request.GET and request.GET['search']:
-        search_term=request.GET.get('search')
+    if 'location' in request.GET and request.GET["location"]:
+        search_term=request.GET.get("location")
         searched_hoods=Neighbourhood.search_by_location(search_term)
         message=f"{search_term}"
 
