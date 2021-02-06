@@ -26,7 +26,7 @@
 
 
   <!-- Collapsible content -->
-  <!-- {% if user.is_authenticated %} -->
+  {% if user.is_authenticated %}
 
   <div class="collapse navbar-collapse" id="basicExampleNav">
 
@@ -61,6 +61,8 @@
           aria-haspopup="true" aria-expanded="false">More</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="/accounts/register/" style="color:maroon;background-color:wheat;">Sign In</a>
+          <a class="dropdown-item" href="/accounts/login/" style="color:maroon;background-color:wheat;">Log In</a>
+
         </div>
       </li>
 
