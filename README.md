@@ -1,6 +1,3 @@
-# neighbourhood
-This is an application for a heads up on what is happening in the hood
-
 # Neighbourhood
 
 ## By Deborah Mugiraneza Ingabire
@@ -24,7 +21,7 @@ Postgres<br>
 Heroku for deployment<br>
 
 ### Set up and Installation
-To access this application on your command line, you need to clone it. git clone https://github.com/twyfordsparks/neighbourhood.git <br>
+To access this application on your command line, you need to clone it. git clone https://github.com/ingabineza12/neighbourhood.git <br>
 
 Prerequisites
 A user will require git, Django, postgresql and python3.6+ installed in their machine. To install these two, you can use the following commands<br>
